@@ -8,16 +8,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Split View Controller-->
+        <scene sceneID="Fkt-aA-Eqb">
+            <objects>
+                <splitViewController allowDoubleColumnStyle="YES" id="xg5-g2-tdV" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="1I1-3S-akI" kind="relationship" relationship="detailViewController" id="x9m-zn-4Ka"/>
+                        <segue destination="d12-Yw-E5G" kind="relationship" relationship="masterViewController" id="1qC-hB-LgI"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="82q-PM-zxI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1622" y="-537"/>
+        </scene>
+        <!--Emoji Art Document Table View Controller-->
+        <scene sceneID="k7D-HM-Rxr">
+            <objects>
+                <tableViewController id="ZZ5-h0-g5J" customClass="EmojiArtDocumentTableViewController" customModule="EmojIArt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zAp-Ay-huQ">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qXM-fn-LV9">
+                                <rect key="frame" x="0.0" y="28" width="420" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qXM-fn-LV9" id="3Mp-L2-FGf">
+                                    <rect key="frame" x="100" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZZ5-h0-g5J" id="tPa-QJ-4Ae"/>
+                            <outlet property="delegate" destination="ZZ5-h0-g5J" id="kur-oc-3pl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Wul-iu-wPf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ONQ-9H-HTR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-77.889447236180899" y="-869.06474820143887"/>
+        </scene>
         <!--Emoji Art View Controller-->
         <scene sceneID="kz5-ZU-NI2">
             <objects>
                 <viewController id="1I1-3S-akI" customClass="EmojiArtViewController" customModule="EmojIArt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6tu-NU-GWT">
-                        <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahu-Zm-PZH" customClass="EmojiArtView" customModule="EmojIArt" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="1194" height="814"/>
+                                <rect key="frame" x="0.0" y="50" width="873.5" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -38,6 +80,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrR-jd-2cx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-521" y="-25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lzc-uX-WFA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d12-Yw-E5G" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aOH-rh-T5m">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZZ5-h0-g5J" kind="relationship" relationship="rootViewController" id="Xhl-cZ-WEv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tvq-Cw-ORG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-785.42713567839201" y="-869.06474820143887"/>
         </scene>
     </scenes>
     <resources>
