@@ -8,6 +8,14 @@
 import UIKit
 
 class EmojiArtDocumentTableViewController: UITableViewController {
+    
+    
+    override func viewWillLayoutSubviews() {
+        super .viewWillLayoutSubviews()
+        if splitViewController?.preferredDisplayMode != .oneOverSecondary {
+            splitViewController?.preferredDisplayMode = .oneOverSecondary
+        }
+    }
 
     var emojiArtDocuments = ["One", "Two", "Three"]
     
