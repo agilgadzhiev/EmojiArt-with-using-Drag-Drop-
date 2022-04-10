@@ -9,24 +9,39 @@ import UIKit
 
 class EmojiArtDocumentTableViewController: UITableViewController {
 
-
+    var emojiArtDocuments = ["One", "Two", "Three"]
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return emojiArtDocuments.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "documentCell", for: indexPath)
+        
+        cell.textLabel?.text = emojiArtDocuments[indexPath.row]
+        
 
         return cell
+    }
+    
+    @IBAction func newEmojiArt(_ sender: UIBarButtonItem) {
+        emojiArtDocuments += ["Untitled".madeUnique(withRespectTo: emojiArtDocuments)]
+        tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            emojiArtDocuments.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
 
