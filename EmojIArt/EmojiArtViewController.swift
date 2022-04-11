@@ -15,6 +15,8 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
         }
     }
     
+    var emojiArtView = EmojiArtView()
+    
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
             scrollView.maximumZoomScale = 5.0
@@ -78,7 +80,6 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
             session.canLoadObjects(ofClass: UIImage.self)
     }
     
-    @IBOutlet weak var emojiArtView: EmojiArtView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
