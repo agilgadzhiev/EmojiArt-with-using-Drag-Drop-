@@ -77,28 +77,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahu-Zm-PZH" customClass="EmojiArtView" customModule="EmojIArt" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="873.5" height="764"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xA0-8m-cd8">
+                                <rect key="frame" x="0.0" y="50" width="874" height="784"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="RJt-c7-tbq"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="eQ0-xH-6Vx"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nuc-jx-wga"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="nuc-jx-wga" firstAttribute="trailing" secondItem="Ahu-Zm-PZH" secondAttribute="trailing" id="A5d-Si-nlu"/>
-                            <constraint firstItem="nuc-jx-wga" firstAttribute="bottom" secondItem="Ahu-Zm-PZH" secondAttribute="bottom" id="T1d-6A-el3"/>
-                            <constraint firstItem="Ahu-Zm-PZH" firstAttribute="leading" secondItem="nuc-jx-wga" secondAttribute="leading" id="nWK-Ln-8uT"/>
-                            <constraint firstItem="Ahu-Zm-PZH" firstAttribute="top" secondItem="nuc-jx-wga" secondAttribute="top" id="y6K-On-f8T"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="dropZone" destination="6tu-NU-GWT" id="nwn-3z-2qj"/>
-                        <outlet property="emojiArtView" destination="Ahu-Zm-PZH" id="i2B-IQ-gG1"/>
+                        <outlet property="scrollView" destination="xA0-8m-cd8" id="urY-FO-Roe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrR-jd-2cx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-521" y="-25"/>
+            <point key="canvasLocation" x="-521.10552763819101" y="-25.179856115107917"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lzc-uX-WFA">
