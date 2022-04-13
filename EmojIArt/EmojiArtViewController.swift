@@ -22,11 +22,24 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
             scrollView.maximumZoomScale = 5.0
             scrollView.minimumZoomScale = 0.1
             scrollView.delegate = self
+            if let removingView = scrollView.subviews.first {
+                removingView.removeFromSuperview()
+            }
             scrollView.addSubview(emojiArtView)
         }
     }
     
+    @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var scrollViewWidth: NSLayoutConstraint!
     
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        scrollViewWidth.constant = scrollView.contentSize.width
+        scrollViewHeight.constant = scrollView.contentSize.height
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return emojiArtView
+    }
     // set contentSize == frame
     var emojiArtBackgroundImage: UIImage? {
         get {
@@ -40,6 +53,9 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
             let size = newValue?.size ?? CGSize.zero
             emojiArtView.frame = CGRect(origin: CGPoint.zero, size: size)
             scrollView.contentSize = size
+            
+            scrollViewWidth?.constant = size.width
+            scrollViewHeight?.constant = size.height
             
             // finding start zoomScale
             if let dropZone = self.dropZone, size.width > 0, size.height > 0 {
